@@ -1,5 +1,6 @@
-package com.example.bookshelf.di
+package com.example.bookshelf.data
 
+import com.example.bookshelf.data.AppContainer
 import com.example.bookshelf.data.BookshelfRepository
 import com.example.bookshelf.data.DefaultBookshelfRepository
 import com.example.bookshelf.network.BookshelfApiService

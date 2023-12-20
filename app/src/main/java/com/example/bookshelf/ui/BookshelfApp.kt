@@ -26,7 +26,7 @@ import com.example.bookshelf.Routes
 import com.example.bookshelf.R
 import com.example.bookshelf.ui.screens.detail_screen.DetailScreen
 import com.example.bookshelf.ui.screens.detail_screen.DetailsViewModel
-import com.example.bookshelf.ui.screens.search_screen.QueryScreen
+import com.example.bookshelf.ui.screens.search_screen.SearchScreen
 import com.example.bookshelf.ui.screens.search_screen.BookshelfViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -103,7 +103,7 @@ fun NavHost(
     ) {
 
         composable(route = Routes.QueryScreen.name) {
-            QueryScreen(
+            SearchScreen(
                 viewModel = viewModel,
                 retryAction = { viewModel.getBooks() },
                 onDetailsClick = {

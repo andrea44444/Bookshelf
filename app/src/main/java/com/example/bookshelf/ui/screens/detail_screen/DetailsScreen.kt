@@ -77,37 +77,17 @@ fun BookDetails(book: Book) {
                 placeholder = painterResource(id = R.drawable.loading_img),
             )
             Spacer(modifier = Modifier.height(24.dp))
-            Text(
-                text = stringResource(R.string.book_subtitle, book.volumeInfo.subtitle),
-                style = MaterialTheme.typography.titleMedium
-            )
-//            Spacer(modifier = Modifier.height(8.dp))
-//            Text(
-//                text = "publisher: " + book.volumeInfo.publisher,
-//                style = MaterialTheme.typography.titleMedium
-//            )
-//            Spacer(modifier = Modifier.height(8.dp))
-//            Text(
-//                text = "publishedDate: " + book.volumeInfo.publishedDate,
-//                style = MaterialTheme.typography.titleMedium
-//            )
-//            Spacer(modifier = Modifier.height(8.dp))
+
             Text(
                 text = stringResource(R.string.book_authors, book.volumeInfo.allAuthors()),
                 style = MaterialTheme.typography.titleMedium
             )
 
-//            Spacer(modifier = Modifier.height(8.dp))
-//            Text(
-//                text = "description: " + book.description,
-//                style = MaterialTheme.typography.bodyMedium
-//            )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = "description: " + book.volumeInfo.description,
                 style = MaterialTheme.typography.bodyMedium
             )
-
         }
     }
 }

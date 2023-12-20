@@ -10,18 +10,12 @@ import com.example.bookshelf.network.BookshelfApiService
 class DefaultBookshelfRepository(
     private val bookshelfApiService: BookshelfApiService
 ) : BookshelfRepository {
-    /** Retrieves list of Volumes from underlying data source */
-    // Notes: List<Book>? NULLABLE
     override suspend fun getBooks(query: String): List<Book>? {
-        Log.d("a", "a1")
         return try {
-            Log.d("a", "a2")
             val res = bookshelfApiService.getBooks(query)
-            Log.d("a", "a3")
             if (res.isSuccessful) {
                 res.body()?.items ?: emptyList()
             } else {
-                Log.d("a", "a4")
                 emptyList()
             }
         } catch (e: Exception) {

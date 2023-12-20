@@ -17,7 +17,7 @@ import com.example.bookshelf.ui.screens.LoadingScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun QueryScreen(
+fun SearchScreen(
     modifier: Modifier = Modifier,
     viewModel: BookshelfViewModel,
     retryAction: () -> Unit,
@@ -66,7 +66,6 @@ fun QueryScreen(
             }
         }
     }
-
 }
 
 

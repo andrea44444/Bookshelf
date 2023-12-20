@@ -63,71 +63,21 @@ private fun GridItem(
             .fillMaxWidth()
             .padding(8.dp)
 
-    ) {
-        Column(
+    ){
+        AsyncImage(
             modifier = Modifier
-                .padding(18.dp)
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            AsyncImage(
-                modifier = Modifier
-                    .aspectRatio(.6f),
-                model = ImageRequest.Builder(context = LocalContext.current)
-                    .data(book.volumeInfo.imageLinks?.thumbnail)
-                    .crossfade(true)
-                    .build(),
-                contentDescription = null,
-                error = painterResource(id = R.drawable.ic_broken_image),
-                placeholder = painterResource(id = R.drawable.loading_img),
-                contentScale = ContentScale.FillBounds
-            )
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                ExpandButton(
-                    onClick = { expanded = !expanded },
-                    expanded = expanded
-                )
-            }
-            if (expanded) {
-                Column() {
-                    Text(
-                        text = stringResource(R.string.book_title, book.volumeInfo.title),
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                    Text(
-                        text = stringResource(R.string.book_subtitle, book.volumeInfo.subtitle),
-                        style = MaterialTheme.typography.bodyMedium
-                    )
-                    Text(
-                        text = stringResource(R.string.book_authors, book.volumeInfo.allAuthors()),
-                        style = MaterialTheme.typography.bodySmall
-                    )
-                }
-            }
-        }
-    }
-
-}
-
-
-@Composable
-fun ExpandButton(
-    onClick: () -> Unit,
-    expanded: Boolean
-) {
-    IconButton(
-        onClick = onClick
-    ) {
-        Icon(
-            imageVector = if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
-            contentDescription = null
+                .aspectRatio(.6f),
+            model = ImageRequest.Builder(context = LocalContext.current)
+                .data(book.volumeInfo.imageLinks?.thumbnail)
+                .crossfade(true)
+                .build(),
+            contentDescription = null,
+            error = painterResource(id = R.drawable.ic_broken_image),
+            placeholder = painterResource(id = R.drawable.loading_img),
+            contentScale = ContentScale.FillBounds
         )
 
     }
 }
+
 

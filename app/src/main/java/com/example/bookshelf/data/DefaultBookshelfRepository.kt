@@ -4,9 +4,6 @@ import android.util.Log
 import com.example.bookshelf.model.Book
 import com.example.bookshelf.network.BookshelfApiService
 
-/**
- * Default Implementation of repository that retrieves volumes data from underlying data source.
- */
 class DefaultBookshelfRepository(
     private val bookshelfApiService: BookshelfApiService
 ) : BookshelfRepository {
